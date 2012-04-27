@@ -1,0 +1,38 @@
+#{extends 'main.html'/}
+
+<br />
+<div class="row">
+    <div class="span8 offset2">
+	#{if resultId==null || resultText==null}
+        <em style="color: #DD0000;">Invalid Survey ID! (ID = <strong>${resultId}</strong>)</em>
+    #{/if}
+    
+    #{if resultId!=null && resultText!=null}
+        <h3>Search Result</h3>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>POS Tags</th>
+            </tr>
+            </thead>
+            <tr>
+                <td><strong><code>${resultId}</code></strong></td>
+                <td>${resultText.raw()}</td>
+            </tr>
+        </table>
+    #{/if}
+    
+    <br />
+    
+        #{form @Tagger.search(), class: "form-vertical"}
+        <form method="post" action="tagger" >
+            <label>Survey ID<input name="searchId"/></label>
+            <input type="submit" value="Search" class="btn"/>
+        #{/form}
+    
+    <br />
+    
+    
+    </div>
+</div>

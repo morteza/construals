@@ -1,0 +1,14 @@
+#{extends 'main.html'/}
+
+<div class="row">
+    <div class="span8 offset2">
+        <div class="page-header">
+        </div>
+        #{form @Tagger.search(), class: "form-vertical"}
+        <form method="post" action="tagger" >
+            <label>Survey ID<input name="searchId"/></label>
+            <input type="submit" value="Search" class="btn"/>
+        #{/form}
+
+    </div>
+</div>
