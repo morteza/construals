@@ -9,6 +9,13 @@ GET     /                                          Tagger.index
 GET        /tagger                                 Tagger.index
 POST       /tagger                                 Tagger.search
 
+GET		   /search								   Tagger.index
+GET		   /examples							   Tagger.index
+GET		   /about								   Tagger.index
+GET		   /construals							   Tagger.index
+GET		   /overview							   Tagger.index
+
+
 # Ignore favicon requests
 GET        /favicon.ico                            404
 

@@ -1,5 +1,18 @@
 #{extends 'main.html'/}
 
+
+<div class="row">
+	<div class="span4 offset2">
+	<div class="alert alert-error alert-block">
+	<a class="close" data-dismiss="alert" href="#">×</a>
+	<h4>Error!</h4>
+		9/11 dataset and web interfaces are being updated.
+		Please come back later.
+	</div>
+	<div class="span6"></div>
+	</div>
+</div>
+
 <div class="row">
     <div class="span8 offset2">
         #{form @Tagger.search(), class: "form-vertical"}
@@ -40,7 +53,7 @@
                 <option>43</option>
               </select>
             </label>            
-            <input type="submit" value="Search" class="btn"/>
+            <input type="submit" value="Search" class="btn" disabled/>
         </form>            
         #{/form}
     </div>
