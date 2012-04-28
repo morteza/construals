@@ -22,13 +22,50 @@
             </tr>
         </table>
     #{/if}
-    
-    <br />
-    
+	</div>
+</div>
+<div class="row">
+    <div class="span8 offset2">
         #{form @Tagger.search(), class: "form-vertical"}
         <form method="post" action="tagger" >
-            <label>Survey ID<input name="searchId"/></label>
-            <input type="submit" value="Search" class="btn"/>
+            <label class="control-label" for="surveyId">Survey
+              <select id="surveyId">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </label>
+            <label class="control-label" for="universityId">University Code
+              <select id="universityId">
+                <option>GU</option>
+                <option>HUE</option>
+                <option>HUY</option>
+                <option>NSU</option>
+                <option>NYU</option>
+                <option>STAN</option>
+                <option>STLC</option>
+                <option>STLM</option>
+                <option>SWE</option>
+                <option>UCSC</option>
+                <option>YALE</option>
+              </select>
+            </label>
+            <label>Participant Number<input name="participantNumber"/></label>
+            <label class="control-label" for="questionId">Question
+              <select id="questionId">
+                <option>1</option>
+                <option>11</option>
+                <option>12</option>
+                <option>38</option>
+                <option>39</option>
+                <option>40</option>
+                <option>41</option>
+                <option>42</option>
+                <option>43</option>
+              </select>
+            </label>            
+            <input type="submit" value="Search" class="btn" disabled/>
+        </form>            
         #{/form}
     </div>
     <div class="span2"></div>
