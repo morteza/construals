@@ -3,11 +3,20 @@
 <br />
 <div class="row">
     <div class="span8 offset2">
-	#{if resultId==null || resultText==null}
-        <em style="color: #DD0000;">Invalid Survey ID! (ID = <strong>${resultId}</strong>)</em>
+	#{if strQuery==null || resultText==null}
+	<div class="row">
+		<div class="span4 offset2">
+		<div class="alert alert-error alert-block">
+		<a class="close" data-dismiss="alert" href="#">×</a>
+		<h4>Error!</h4>
+			Invalid query. Participant with ID="${strQuery}" not found!
+		</div>
+		<div class="span6"></div>
+		</div>
+	</div>
     #{/if}
     
-    #{if resultId!=null && resultText!=null}
+    #{if strQuery!=null && resultText!=null}
         <h3>Search Result</h3>
         <table class="table table-bordered table-striped">
             <thead>
@@ -17,7 +26,7 @@
             </tr>
             </thead>
             <tr>
-                <td><strong><code>${resultId}</code></strong></td>
+                <td><strong><code>${strQuery}</code></strong></td>
                 <td>${resultText.raw()}</td>
             </tr>
         </table>
@@ -29,14 +38,14 @@
         #{form @Tagger.search(), class: "form-vertical"}
         <form method="post" action="tagger" >
             <label class="control-label" for="surveyId">Survey
-              <select id="surveyId">
+              <select name="surveyId">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
               </select>
             </label>
             <label class="control-label" for="universityId">University Code
-              <select id="universityId">
+              <select name="universityId">
                 <option>GU</option>
                 <option>HUE</option>
                 <option>HUY</option>
@@ -50,9 +59,9 @@
                 <option>YALE</option>
               </select>
             </label>
-            <label>Participant Number<input name="participantNumber"/></label>
+            <label>Participant Number<input name="participantId"/></label>
             <label class="control-label" for="questionId">Question
-              <select id="questionId">
+              <select name="questionId">
                 <option>1</option>
                 <option>11</option>
                 <option>12</option>
@@ -62,9 +71,13 @@
                 <option>41</option>
                 <option>42</option>
                 <option>43</option>
+                <option>52</option>
+                <option>53</option>
+                <option>54</option>                
+                <option>55</option>                
               </select>
             </label>            
-            <input type="submit" value="Search" class="btn" disabled/>
+            <input type="submit" value="Search" class="btn" />
         </form>            
         #{/form}
     </div>

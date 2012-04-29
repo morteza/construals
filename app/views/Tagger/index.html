@@ -1,6 +1,7 @@
 #{extends 'main.html'/}
 
 
+<!-- 
 <div class="row">
 	<div class="span4 offset2">
 	<div class="alert alert-error alert-block">
@@ -12,20 +13,20 @@
 	<div class="span6"></div>
 	</div>
 </div>
-
+ -->
 <div class="row">
     <div class="span8 offset2">
         #{form @Tagger.search(), class: "form-vertical"}
         <form method="post" action="tagger" >
             <label class="control-label" for="surveyId">Survey
-              <select id="surveyId">
+              <select name="surveyId">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
               </select>
             </label>
             <label class="control-label" for="universityId">University Code
-              <select id="universityId">
+              <select name="universityId">
                 <option>GU</option>
                 <option>HUE</option>
                 <option>HUY</option>
@@ -39,9 +40,9 @@
                 <option>YALE</option>
               </select>
             </label>
-            <label>Participant Number<input name="participantNumber"/></label>
+            <label>Participant Number<input name="participantId"/></label>
             <label class="control-label" for="questionId">Question
-              <select id="questionId">
+              <select name="questionId">
                 <option>1</option>
                 <option>11</option>
                 <option>12</option>
@@ -53,7 +54,7 @@
                 <option>43</option>
               </select>
             </label>            
-            <input type="submit" value="Search" class="btn" disabled/>
+            <input type="submit" value="Search" class="btn" />
         </form>            
         #{/form}
     </div>

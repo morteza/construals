@@ -16,13 +16,24 @@ public class Tagger extends Controller {
     	render();
     }
     
-    public static void search(String searchId) {
+    public static void search(String surveyId, String universityId, String participantId, String questionId) {
     	
-    	String resultId = new String(searchId);
+    	if (participantId.length() == 2)
+    		participantId = "0" + participantId;
+    	else if (participantId.length() == 1)
+    		participantId = "00" + participantId;
+    	
+    	String strSurveySuffix = "";
+    	if (surveyId.equals("2"))
+    		strSurveySuffix = "B";
+    	else if (surveyId.equals("3"))
+    		strSurveySuffix = "C";
+    	
+    	String strQuery = universityId + participantId + strSurveySuffix + "-Q" + questionId;
     	String resultText = null;
 
     	try {
-    	Document doc = repo.getDocument(searchId);
+    	Document doc = repo.getDocument(strQuery);
     	int tagSize = doc.size();
     	resultText = "<div>";
 		for (int i = 0; i < tagSize; i++) {
@@ -36,7 +47,7 @@ public class Tagger extends Controller {
 
     	resultText += "</div>";
     	} catch (Exception e) {}
-    	render(resultId,resultText);
+    	render(strQuery,resultText);
    }
     
 }
