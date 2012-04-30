@@ -1,0 +1,37 @@
+#{extends 'main.html'/}
+
+<br />
+<div class="row">
+    <div class="span8 offset2">
+	#{if strQuery==null || resultText==null}
+	<div class="row">
+		<div class="span4 offset2">
+		<div class="alert alert-error alert-block">
+		<a class="close" data-dismiss="alert" href="#">×</a>
+		<h4>Error!</h4>
+			Invalid query. Participant with ID="${strQuery}" not found!
+		</div>
+		<div class="span6"></div>
+		</div>
+	</div>
+    #{/if}
+    
+    #{if strQuery!=null && resultText!=null}
+        <h3>Search Result</h3>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td><strong>ID</strong></th>
+                <td><strong><code>${strQuery}</code></strong></th>
+            </tr>
+            </thead>
+            <tr>
+                <td><strong>POS Tags</strong></td>
+                <td>${resultText.raw()}</td>
+            </tr>
+        </table>
+    #{/if}
+	</div>
+</div>
+
+#{include 'search-form.html'/}

@@ -3,17 +3,17 @@
 # ~~~~
 
 # Home page
-GET     /                                          Tagger.index
+GET     /                                          POSTagger.index
 
 # Tagger
-GET        /tagger                                 Tagger.index
-POST       /tagger                                 Tagger.search
+GET        /postag                                 POSTagger.index
+POST       /postag                                 POSTagger.postag
 
-GET		   /search								   Tagger.index
-GET		   /examples							   Tagger.index
-GET		   /about								   Tagger.index
-GET		   /construals							   Tagger.index
-GET		   /overview							   Tagger.index
+GET		   /search								   POSTagger.index
+GET		   /examples							   POSTagger.index
+GET		   /about								   POSTagger.index
+GET		   /construals							   POSTagger.index
+GET		   /overview							   POSTagger.index
 
 
 # Ignore favicon requests

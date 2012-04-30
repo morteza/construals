@@ -6,7 +6,7 @@ import fuschia.tagger.common.*;
 
 import play.mvc.*;
 
-public class Tagger extends Controller {
+public class POSTagger extends Controller {
 
 	static DocumentRepository repo = DocumentRepository.get911();
 
@@ -16,7 +16,7 @@ public class Tagger extends Controller {
     	render();
     }
     
-    public static void search(String surveyId, String universityId, String participantId, String questionId) {
+    public static void postag(String surveyId, String universityId, String participantId, String questionId) {
     	
     	if (participantId.length() == 2)
     		participantId = "0" + participantId;
@@ -39,10 +39,10 @@ public class Tagger extends Controller {
 		for (int i = 0; i < tagSize; i++) {
 
 			// TOKEN
-			resultText += "<code><strong style=\"color: #000000;\">" + doc.tokens[i] + "</strong>&nbsp;";
+			resultText += "<em style=\"color: #000000;\">" + doc.tokens[i] + "</em></code>  ";
 
 			// TAG
-			resultText += "<em style=\"color: #CC0000;\">" + doc.tags[i] + "</em></code>  ";
+			resultText += "<span class=\"label label-info\">" + doc.tags[i] + "</span>&nbsp;";
 		}
 
     	resultText += "</div>";
