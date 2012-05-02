@@ -2,13 +2,12 @@ package controllers;
 
 import java.util.List;
 
+import fuschia.tagger.Bootstrap;
 import fuschia.tagger.common.*;
 
 import play.mvc.*;
 
 public class POSTagger extends Controller {
-
-	static DocumentRepository repo = DocumentRepository.get911();
 
     public static void index() {
         //List<Person> people = Person.find("ORDER BY lastName").fetch();
@@ -33,7 +32,7 @@ public class POSTagger extends Controller {
     	String resultText = null;
 
     	try {
-    	Document doc = repo.getDocument(strQuery);
+    	Document doc = Bootstrap.DefaultDocumentRepository.getDocument(strQuery);
     	int tagSize = doc.size();
     	resultText = "<div>";
 		for (int i = 0; i < tagSize; i++) {
