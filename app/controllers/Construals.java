@@ -1,5 +1,6 @@
 package controllers;
 
+import models.ConstrualData;
 import play.mvc.*;
 
 public class Construals extends Controller {
@@ -8,4 +9,7 @@ public class Construals extends Controller {
         render();
     }
 
+    public static void getConstrualData(String type) {
+    	renderJSON(ConstrualData.findDataByType(type));
+    }
 }

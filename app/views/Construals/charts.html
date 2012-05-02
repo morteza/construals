@@ -1,0 +1,40 @@
+#{extends 'main.html' /}
+#{set title:'Construal Level Theory Charts' /}
+
+<br />
+<div class="row">
+    <h3>Verbs</h3>
+    <div class="span8 offset2" id="verb-placeholder"></div>
+</div>
+
+<br />
+<div class="row">
+    <h3>Adjectives</h3>
+    <div class="span8 offset2" id="adjective-placeholder"></div>
+</div>
+
+<script id="source" language="javascript" type="text/javascript">
+$(function () {
+	var options = {
+			grid: {
+				hoverable: true, clickable: false, backgroundColor: { colors: ["#FFF", "#FFF"] }
+			},
+	        series: {
+	            lines: {show: true}
+	        },
+	        legend: { noColumns: 2, position: "ne" },
+	        yaxis: { min: 0 },
+	        xaxis: {mode: "time", timeformat: "%d/%m"}
+	    };
+    
+	var data = [];
+    var verb_placeholder = $("#verb-placeholder");
+    var adjective_placeholder = $("#adjective-placeholder");
+    $.getJSON("@{Construals.getConstrualData("verb")}", function(views){
+        $.each(views, function(index, view){
+            data.push([view.question,view.percentage]);
+        });
+        $.plot(verb_placeholder, [ { label: "Verbs", data: data } ], options);
+    });        
+});
+</script>
