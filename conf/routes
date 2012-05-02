@@ -12,7 +12,7 @@ POST       /postag                                 POSTagger.postag
 GET		   /search								   POSTagger.index
 GET		   /examples							   POSTagger.index
 GET		   /about								   POSTagger.index
-GET		   /construals							   POSTagger.index
+GET		   /construals							   Construals.index
 GET		   /overview							   POSTagger.index
 
 

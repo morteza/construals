@@ -20,10 +20,10 @@
 
     <!-- fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="public/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="public/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="public/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="public/assets/ico/apple-touch-icon-57-precomposed.png">
 
 	<script type="text/javascript">
 	
@@ -58,10 +58,10 @@
               <li class="">
                 <a href="./overview">Overview</a>
               </li>
-              <li class="active">
-                <a href="./search">POS Tagger</a>
+              <li #{if request.current().path.toLowerCase().indexOf("construals")==-1}class="active"#{/if}>
+                <a href="./postag">POS Tagger</a>
               </li>
-              <li class="">
+              <li #{if request.current().path.toLowerCase().indexOf("construals")!=-1}class="active"#{/if}>
                 <a href="./construals">Construals</a>
               </li>
               <li class="divider-vertical"></li>
