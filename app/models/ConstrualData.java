@@ -10,5 +10,6 @@ import java.util.*;
 public class ConstrualData extends Model {
 	public static List<ConstrualData> findDataByType(String type) {
 		return find("select d from ConstrualData d where MONTH(d.day) =? ", type).fetch();
+		//To update
 	}
 }
