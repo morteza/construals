@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET     /                                          POSTagger.index
+GET     /                                          UnderConstruction.index
 
 # Tagger
 GET        /postag                                 POSTagger.index
@@ -13,7 +13,7 @@ GET		   /search								   POSTagger.index
 GET		   /examples							   POSTagger.index
 GET		   /about								   POSTagger.index
 GET		   /construals							   Construals.index
-GET		   /overview							   POSTagger.index
+GET		   /overview							   UnderConstruction.index
 
 
 # Ignore favicon requests
