@@ -35,7 +35,7 @@ public class POSTagger extends Controller {
     	String strConcreteScore = null;
     	
     	try {
-    	Document doc = Bootstrap.DefaultDocumentRepository.getDocument(strQuery);
+    	Document doc = Bootstrap.DefaultDocumentRepository.getDocumentById(strQuery);
     	
     	int docTokenSize = doc.size();
     	

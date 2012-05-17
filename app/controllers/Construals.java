@@ -27,9 +27,9 @@ public class Construals extends Controller {
     	
     	try {
     		Document[] docs = new Document[3];
-	    	docs[0] = Bootstrap.DefaultDocumentRepository.getDocument(strQuery1);
-	    	docs[1] = Bootstrap.DefaultDocumentRepository.getDocument(strQuery2);
-	    	docs[2] = Bootstrap.DefaultDocumentRepository.getDocument(strQuery3);
+	    	docs[0] = Bootstrap.DefaultDocumentRepository.getDocumentById(strQuery1);
+	    	docs[1] = Bootstrap.DefaultDocumentRepository.getDocumentById(strQuery2);
+	    	docs[2] = Bootstrap.DefaultDocumentRepository.getDocumentById(strQuery3);
 	    	
 	    	int[] verbsCount = new int[3];
 	    	int[] adjectivesCount = new int[3];
