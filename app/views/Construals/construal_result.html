@@ -1,5 +1,46 @@
 #{extends 'main.html' /}
-#{set title:'Construal Analysis' /}
+#{set title:'Construal Result' /}
+
+<div class="row">
+    <div class="span8 offset2">
+	#{if abstScores_survey1==null && abstScores_survey2==null && abstScores_survey1==null}
+	<div class="row">
+		<div class="span4 offset2">
+		<div class="alert alert-error alert-block">
+		<a class="close" data-dismiss="alert" href="#">×</a>
+		<h4>Error!</h4>
+			Invalid query. Participant with ID="${strQuery}" not found!
+		</div>
+		<div class="span6"></div>
+		</div>
+	</div>
+    #{/if}
+    
+    #{if strQuery!=null && (abstScores_survey1!=null || abstScores_survey2!=null || abstScores_survey1!=null)}
+        <h3>Abstraction Scores (1~4)</h3>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <td><strong>ID</strong></th>
+                <td><strong><code>${strQuery}</code></strong></th>
+            </tr>
+            </thead>
+            <tr>
+            	<td><strong>Survey 1</strong></td>
+            	<td>${abstScores_survey1}</td>
+            </tr>
+            <tr>
+            	<td><strong>Survey 2</strong></td>
+            	<td>${abstScores_survey2}</td>
+            </tr>
+            <tr>
+            	<td><strong>Survey 3</strong></td>
+            	<td>${abstScores_survey3}</td>
+            </tr>
+        </table>
+    #{/if}
+	</div>
+</div>
 
 <div class="row">
     <div class="span8 offset2">
@@ -43,22 +84,4 @@
         #{/form}
     </div>
     <div class="span2"></div>
-</div>
-
-<hl>
-
-<br />
-<div class="row">
-    <h3>Verbs</h3>
-    <div class="span12">
-		<img src="public/images/charts/canstrual-verbs.png">
-	</div>
-</div>
-
-<br />
-<div class="row">
-    <h3>Adjectives</h3>
-    <div class="span12">
-		<img src="public/images/charts/canstrual-adjectives.png">
-	</div>
 </div>

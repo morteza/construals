@@ -8,10 +8,10 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-    <link href="public/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="public/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="public/assets/css/docs.css" rel="stylesheet">
-    <link href="public/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="/public/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/public/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/public/assets/css/docs.css" rel="stylesheet">
+    <link href="/public/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
    
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -20,10 +20,10 @@
 
     <!-- fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="public/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="public/assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="public/assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="public/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/public/assets/ico/apple-touch-icon-57-precomposed.png">
 
 	<script type="text/javascript">
 	
@@ -57,20 +57,20 @@
             <ul class="nav">
               <li #{if request.current().path.toLowerCase().indexOf("postag")==-1
               	&& request.current().path.toLowerCase().indexOf("construals")==-1}class="active"#{/if}>
-                <a href="./overview">Overview</a>
+                <a href="/overview">Overview</a>
               </li>
               <li #{if request.current().path.toLowerCase().indexOf("postag")!=-1}class="active"#{/if}>
-                <a href="./postag">POS Tagger</a>
+                <a href="/postag">POS Tagger</a>
               </li>
               <li #{if request.current().path.toLowerCase().indexOf("construals")!=-1}class="active"#{/if}>
-                <a href="./construals">Construals</a>
+                <a href="/construals">Construals</a>
               </li>
               <li class="divider-vertical"></li>
               <li class="">
-                <a href="./examples">Examples</a>
+                <a href="/examples">Examples</a>
               </li>
               <li>
-                <a href="./about">About</a>
+                <a href="/about">About</a>
               </li>
             </ul>
           </div>
@@ -96,23 +96,23 @@
 
     <!-- javascripts -->
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="public/assets/js/jquery.js"></script>
-    <script src="public/assets/js/google-code-prettify/prettify.js"></script>
-    <script src="public/assets/js/bootstrap-transition.js"></script>
-    <script src="public/assets/js/bootstrap-alert.js"></script>
-    <script src="public/assets/js/bootstrap-modal.js"></script>
-    <script src="public/assets/js/bootstrap-dropdown.js"></script>
-    <script src="public/assets/js/bootstrap-scrollspy.js"></script>
-    <script src="public/assets/js/bootstrap-tab.js"></script>
-    <script src="public/assets/js/bootstrap-tooltip.js"></script>
-    <script src="public/assets/js/bootstrap-popover.js"></script>
-    <script src="public/assets/js/bootstrap-button.js"></script>
-    <script src="public/assets/js/bootstrap-collapse.js"></script>
-    <script src="public/assets/js/bootstrap-carousel.js"></script>
-    <script src="public/assets/js/bootstrap-typeahead.js"></script>
-    <script src="public/assets/js/application.js"></script>
+    <script src="/public/assets/js/jquery.js"></script>
+    <script src="/public/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="/public/assets/js/bootstrap-transition.js"></script>
+    <script src="/public/assets/js/bootstrap-alert.js"></script>
+    <script src="/public/assets/js/bootstrap-modal.js"></script>
+    <script src="/public/assets/js/bootstrap-dropdown.js"></script>
+    <script src="/public/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="/public/assets/js/bootstrap-tab.js"></script>
+    <script src="/public/assets/js/bootstrap-tooltip.js"></script>
+    <script src="/public/assets/js/bootstrap-popover.js"></script>
+    <script src="/public/assets/js/bootstrap-button.js"></script>
+    <script src="/public/assets/js/bootstrap-collapse.js"></script>
+    <script src="/public/assets/js/bootstrap-carousel.js"></script>
+    <script src="/public/assets/js/bootstrap-typeahead.js"></script>
+    <script src="/public/assets/js/application.js"></script>
     <!-- FIXME: move Flot library to the chart pages only! -->
-	<script src="public/javascripts/jquery.flot.js"></script>
+	<!--  <script src="public/javascripts/jquery.flot.js"></script>  -->
 
 </body>
 </html>
