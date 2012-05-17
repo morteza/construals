@@ -32,30 +32,30 @@ public class POSTagger extends Controller {
     	String resultText = null;
 
     	String strAbstractionScore = null;
+    	String strConcreteScore = null;
     	
     	try {
     	Document doc = Bootstrap.DefaultDocumentRepository.getDocument(strQuery);
     	
     	int docTokenSize = doc.size();
     	
-    	int codedSize = 0;
-    	double abstractionScore = 0;
+    	int verbsCount = 0;
+    	int adjectivesCount = 0;
     	for (String tag:doc.tags) {
 			if (tag.startsWith("VB")) {
-				codedSize++;
-				abstractionScore += 3;
+				verbsCount++;
 			} else if (tag.startsWith("JJ")
 						|| tag.startsWith("RB")
 						|| tag.startsWith("WRB")) {
-				codedSize++;
-				abstractionScore += 1;
+				adjectivesCount++;
 			}
     	}
     	
-    	int intAbstractionScore = (int) (abstractionScore*100/codedSize);
+    	int intAbstractionScore = (int) ((verbsCount*3+adjectivesCount)*100/(verbsCount+adjectivesCount));
+    	int intConcreteScore = (int) ((adjectivesCount*3+verbsCount)*100/(verbsCount+adjectivesCount));
     	
     	strAbstractionScore = String.valueOf(intAbstractionScore/100) + "." + String.valueOf(intAbstractionScore%100);
-
+    	strConcreteScore = String.valueOf(intConcreteScore/100) + "." + String.valueOf(intConcreteScore%100);
     	resultText = "<div>";
 		for (int i = 0; i < docTokenSize; i++) {
 
@@ -68,7 +68,7 @@ public class POSTagger extends Controller {
 
     	resultText += "</div>";
     	} catch (Exception e) {}
-		render(strQuery, resultText, strAbstractionScore);
+		render(strQuery, resultText, strAbstractionScore, strConcreteScore);
    }
     
 }
