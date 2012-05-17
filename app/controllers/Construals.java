@@ -44,8 +44,12 @@ public class Construals extends Controller {
 						adjectivesCount[i]++;
 					}
 		    	}
-		    	int intAbstractionScore = (int) ((verbsCount[i]*3+adjectivesCount[i])*100/(verbsCount[i]+adjectivesCount[i]));
-		    	abstScores[i] = String.valueOf(intAbstractionScore/100) + "." + String.valueOf(intAbstractionScore%100);
+		    	if (verbsCount[i]+adjectivesCount[i]>0) {
+			    	int intAbstractionScore = (int) ((verbsCount[i]*3+adjectivesCount[i])*100/(verbsCount[i]+adjectivesCount[i]));
+			    	abstScores[i] = String.valueOf(intAbstractionScore/100) + "." + String.valueOf(intAbstractionScore%100);		    		
+		    	} else {
+		    		abstScores[i] = "N/A";
+		    	}
 
 	    	}
     	} catch (Exception e) {}

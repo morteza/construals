@@ -51,11 +51,15 @@ public class POSTagger extends Controller {
 			}
     	}
     	
-    	int intAbstractionScore = (int) ((verbsCount*3+adjectivesCount)*100/(verbsCount+adjectivesCount));
-    	int intConcreteScore = (int) ((adjectivesCount*3+verbsCount)*100/(verbsCount+adjectivesCount));
-    	
-    	strAbstractionScore = String.valueOf(intAbstractionScore/100) + "." + String.valueOf(intAbstractionScore%100);
-    	strConcreteScore = String.valueOf(intConcreteScore/100) + "." + String.valueOf(intConcreteScore%100);
+    	if (verbsCount+adjectivesCount>0) {
+        	int intAbstractionScore = (int) ((verbsCount*3+adjectivesCount)*100/(verbsCount+adjectivesCount));
+        	int intConcreteScore = (int) ((adjectivesCount*3+verbsCount)*100/(verbsCount+adjectivesCount));
+        	
+        	strAbstractionScore = String.valueOf(intAbstractionScore/100) + "." + String.valueOf(intAbstractionScore%100);
+        	strConcreteScore = String.valueOf(intConcreteScore/100) + "." + String.valueOf(intConcreteScore%100);    		
+    	} else {
+    		strAbstractionScore = strConcreteScore = "N/A";
+    	}
     	resultText = "<div>";
 		for (int i = 0; i < docTokenSize; i++) {
 
@@ -67,7 +71,10 @@ public class POSTagger extends Controller {
 		}
 
     	resultText += "</div>";
-    	} catch (Exception e) {}
+    	
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
 		render(strQuery, resultText, strAbstractionScore, strConcreteScore);
    }
     
