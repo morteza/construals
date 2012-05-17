@@ -31,11 +31,33 @@ public class POSTagger extends Controller {
     	String strQuery = universityId + participantId + strSurveySuffix + "-Q" + questionId;
     	String resultText = null;
 
+    	String strAbstractionScore = null;
+    	
     	try {
     	Document doc = Bootstrap.DefaultDocumentRepository.getDocument(strQuery);
-    	int tagSize = doc.size();
+    	
+    	int docTokenSize = doc.size();
+    	
+    	int codedSize = 0;
+    	double abstractionScore = 0;
+    	for (String tag:doc.tags) {
+			if (tag.startsWith("VB")) {
+				codedSize++;
+				abstractionScore += 3;
+			} else if (tag.startsWith("JJ")
+						|| tag.startsWith("RB")
+						|| tag.startsWith("WRB")) {
+				codedSize++;
+				abstractionScore += 1;
+			}
+    	}
+    	
+    	int intAbstractionScore = (int) (abstractionScore*100/codedSize);
+    	
+    	strAbstractionScore = String.valueOf(intAbstractionScore/100) + "." + String.valueOf(intAbstractionScore%100);
+
     	resultText = "<div>";
-		for (int i = 0; i < tagSize; i++) {
+		for (int i = 0; i < docTokenSize; i++) {
 
 			// TOKEN
 			resultText += "<em style=\"color: #000000;\">" + doc.tokens[i] + "</em></code>  ";
@@ -46,7 +68,7 @@ public class POSTagger extends Controller {
 
     	resultText += "</div>";
     	} catch (Exception e) {}
-    	render(strQuery,resultText);
+		render(strQuery, resultText, strAbstractionScore);
    }
     
 }
