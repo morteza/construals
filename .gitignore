@@ -13,3 +13,4 @@ tmp/bytecode/*
 test-result/*
 server.pid
 test
+*.class
