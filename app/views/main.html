@@ -55,15 +55,19 @@
           <a class="brand" href="/">9/11 Tagger</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li #{if request.current().path.toLowerCase().indexOf("postag")==-1
-              	&& request.current().path.toLowerCase().indexOf("construals")==-1}class="active"#{/if}>
+              <li #{if request.current().path.toLowerCase().indexOf("/postag")==-1
+              	&& request.current().path.toLowerCase().indexOf("/construals")==-1
+              	&& request.current().path.toLowerCase().indexOf("/lcm")==-1}class="active"#{/if}>
                 <a href="/overview">Overview</a>
               </li>
-              <li #{if request.current().path.toLowerCase().indexOf("postag")!=-1}class="active"#{/if}>
+              <li #{if request.current().path.toLowerCase().indexOf("/postag")!=-1}class="active"#{/if}>
                 <a href="/postag">POS Tagger</a>
               </li>
-              <li #{if request.current().path.toLowerCase().indexOf("construals")!=-1}class="active"#{/if}>
+              <li #{if request.current().path.toLowerCase().indexOf("/construals")!=-1}class="active"#{/if}>
                 <a href="/construals">Construals</a>
+              </li>
+              <li #{if request.current().path.toLowerCase().indexOf("/lcm")!=-1}class="active"#{/if}>
+                <a href="/lcm">LCM</a>
               </li>
               <li class="divider-vertical"></li>
               <li class="">

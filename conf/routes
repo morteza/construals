@@ -6,15 +6,19 @@
 GET     /                                          UnderConstruction.index
 
 # Tagger
-GET        /postag                                 POSTagger.index
-POST       /postag                                 POSTagger.postag
+GET        /postag/?                               POSTagger.index
+POST       /postag/?                               POSTagger.postag
 
-GET		   /search								   POSTagger.index
-GET		   /examples							   POSTagger.index
-GET		   /about								   POSTagger.index
-GET		   /construals							   Construals.index
-GET		   /overview							   UnderConstruction.index
+GET		   /search/?							   POSTagger.index
+GET		   /examples/?							   POSTagger.index
+GET		   /about/?								   POSTagger.index
+GET		   /construals/?						   Construals.index
+GET		   /overview/?							   UnderConstruction.index
+GET		   /lcm/?								   LCM.index
 
+# Static CSV files
+GET		   /lcm/csv/verbs/?						   staticFile:public/csv/verbs.csv
+GET		   /lcm/csv/adjectives/?				   staticFile:public/csv/adjectives.csv
 
 # Ignore favicon requests
 GET        /favicon.ico                            404
