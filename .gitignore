@@ -14,3 +14,7 @@ test-result/*
 server.pid
 test
 *.class
+
+db/h2/play.lock.db
+db/h2/play.h2.db
+logs
