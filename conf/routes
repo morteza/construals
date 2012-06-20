@@ -9,6 +9,11 @@ GET     /                                          UnderConstruction.index
 GET        /postag/?                               POSTagger.index
 POST       /postag/?                               POSTagger.postag
 
+# Survey
+GET        /survey/?                               Survey.index
+POST       /survey/?                               Survey.index
+
+# Other Pages
 GET		   /search/?							   POSTagger.index
 GET		   /examples/?							   POSTagger.index
 GET		   /about/?								   POSTagger.index
