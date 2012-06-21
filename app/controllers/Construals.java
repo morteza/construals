@@ -18,11 +18,14 @@ public class Construals extends Controller {
     	else if (participantId.length() == 1)
     		participantId = "00" + participantId;
     	    	
-    	String strQuery = universityId + participantId + " (Q" + questionId + ")";
-    	String strQuery1 = universityId + participantId + "-Q" + questionId;
-    	String strQuery2 = universityId + participantId + "B-Q" + questionId;
-    	String strQuery3 = universityId + participantId + "C-Q" + questionId;
-    	
+    	String mappedS1Id = Bootstrap.DefaultDocumentRepository.getParticipantMap().getS1(universityId + participantId);
+    	String mappedS2Id = Bootstrap.DefaultDocumentRepository.getParticipantMap().getS2(universityId + participantId);
+    	String mappedS3Id = Bootstrap.DefaultDocumentRepository.getParticipantMap().getS3(universityId + participantId);
+    	String strQuery1 = mappedS1Id + "-Q" + questionId;
+    	String strQuery2 = mappedS2Id + "-Q" + questionId;
+    	String strQuery3 = mappedS3Id + "-Q" + questionId;
+
+    	String strQuery = mappedS1Id + ", " + mappedS2Id + ", " + mappedS3Id + " (Q" + questionId + ")";
     	String[] abstScores = new String[3];
     	
     	try {
