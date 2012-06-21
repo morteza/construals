@@ -1,4 +1,4 @@
-Play framework on OpenShift Express
+911 Tagger using Play framework on OpenShift DIY
 ============================
 
 This git repository helps you get up and running quickly with a Play framework application
