@@ -137,3 +137,6 @@ Play framework native support for openshift was a long awaited and pretty popula
 Licence
 ----------------------------
 This project is distributed under [Apache 2 licence](http://www.apache.org/licenses/LICENSE-2.0.html). 
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/morteza/construals/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
