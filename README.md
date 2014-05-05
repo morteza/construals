@@ -1,4 +1,4 @@
-### 911 Tagger using Play framework on OpenShift DIY
+## 911 Tagger using Play framework on OpenShift DIY
 
 #### Licence
 
