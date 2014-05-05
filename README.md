@@ -1,4 +1,4 @@
-## CLT/LCM Tagger using Play framework on OpenShift DIY
+## CLT/LCM 9/11 Tagger
 
 Contrual Level Theory (CLT) analyzer using Linguistic Category Model (LCM).
 
